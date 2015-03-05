@@ -14,18 +14,25 @@ import java.util.Properties;
 
 public class NameNode implements INameNode {
 
+	// Request - Response
 	static IRequestParser requestParser = new ProtoRequestParser();
+	static IResponseGenerator responseGenerator = new ProtoResponseGenerator();
 	
+	// Blocks
 	static Blocks blocks = new Blocks();
 	
+	// 
 	static HashMap<String, List<Integer> > fileBlockMapping = new HashMap<>();
-	
 	static String fileBlocksMapFileName;
+	
+	static HashMap<Integer, DataNodeLocation> blockDatanodeMapping = new HashMap<>();
+	
+	static int fileHandle; // Need to persist in file
+	static Object fileHandleMutex; 
 	
 	private static void InitialiseFileBlockMapping() throws IOException
 	{
 		// Read from file and fill fileBlockMapping
-		
 		BufferedReader reader = new BufferedReader(new FileReader(fileBlocksMapFileName));
 		
 		String line = null;
@@ -89,53 +96,114 @@ public class NameNode implements INameNode {
 	public byte[] openFile(byte[] openFileRequest) {
 		
 		// call openFile on requestParser to get the response OpenFileRsponse.
-		
 		// Get the free block number.
-		int blockNumber = blocks.getFreeBlockNumber();
 		
+		OpenFileRequest request = null;
 		
+		List<Integer> blocks = fileBlockMapping.get(request.fileName);
+
+		OpenFileResponse response = new OpenFileResponse();
 		
+		if(blocks == null)
+		{
+			response.status = 1;  // 1 = fail
+			return responseGenerator.openFile(response);
+		}
+		else
+		{
+			response.status = 0;
+			
+			synchronized (fileHandleMutex) {
+				response.handle = fileHandle;
+				fileHandle++;  // assuming it wont go over INT range.
+			}
+			
+			response.blockNums = blocks;
+			
+			return responseGenerator.openFile(response);
+		}
 		// Increment free block number
 		
-		
-		
-		return null;
 	}
 
 	@Override
 	public byte[] closeFile(byte[] closeFileRequest) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		CloseFileRequest request = null;
+		
+		CloseFileResponse response = new CloseFileResponse();
+		
+		response.status = 0;  // What to do actually??
+		
+		return responseGenerator.closeFile(response);
 	}
 
 	@Override
 	public byte[] getBlockLocations(byte[] getBlockLOcationsRequest) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		BlockLocationRequest request = requestParser.getBlockLocations(getBlockLOcationsRequest);
+		
+		BlockLocationResponse response = new BlockLocationResponse();
+		
+		// Find the data nodes for these blocks..
+		
+		//........................................
+		
+		return responseGenerator.getBlockLocations(response);
 	}
 
 	@Override
 	public byte[] assignBlock(byte[] assignBlockRequest) {
-		// TODO Auto-generated method stub
-		return null;
+
+		AssignBlockRequest request = requestParser.assignBlock(assignBlockRequest);
+		
+		AssignBlockResponse response = new AssignBlockResponse();
+		
+		// Find the data nodes for these blocks..
+		
+		//........................................
+		
+		return responseGenerator.assignBlock(response);
+		
 	}
 
 	@Override
 	public byte[] list(byte[] listRequest) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ListRequest request = requestParser.list(listRequest);
+		
+		ListResponse response = new ListResponse();
+		
+		
+		
+		return responseGenerator.list(response);	
 	}
 
 	@Override
 	public byte[] blockReport(byte[] blockReportRequest) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		BlockReportRequest request = requestParser.blockReport(blockReportRequest);
+		
+		BlockReportResponse response = new BlockReportResponse();
+		
+		
+		
+		return responseGenerator.blockReport(response);	
+		
 	}
 
 	@Override
-	public byte[] heartBeat(byte[] hearBeatRequest) {
-		// TODO Auto-generated method stub
-		return null;
+	public byte[] heartBeat(byte[] heartBeatRequest) {
+		
+		HeartBeatRequest request = requestParser.heartBeat(heartBeatRequest);
+		
+		HeartBeatResponse response = new HeartBeatResponse();
+		
+		
+		
+		return responseGenerator.heartBeat(response);	
+		
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -148,14 +216,10 @@ public class NameNode implements INameNode {
 		ReadConfigs();
 		
 		
-		
-		
 		// For now just call individual methods from here..
 		blocks.restore();
 		InitialiseFileBlockMapping();
-		
-		
-		
+
 	}
 
 }

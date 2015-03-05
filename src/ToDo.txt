@@ -1,0 +1,5 @@
+1. See what details need to be sent in heart beats
+	
+2. How to generate handle for open file
+
+3. What to actually do on close file 

@@ -15,44 +15,44 @@ public class ProtoRequestParser implements IRequestParser{
 	}
 
 	@Override
-	public OpenFileResponse openFile(byte[] openFileRequest) {
+	public OpenFileRequest openFile(byte[] openFileRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public CloseFileResponse closeFile(byte[] closeFileRequest) {
+	public CloseFileRequest closeFile(byte[] closeFileRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public GetBlockLocationResponse getBlockLocations(
+	public BlockLocationRequest getBlockLocations(
 			byte[] getBlockLOcationsRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public AssignBlockResponse assignBlock(byte[] assignBlockRequest) {
+	public AssignBlockRequest assignBlock(byte[] assignBlockRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ListResponse list(byte[] listRequest) {
+	public ListRequest list(byte[] listRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public BlockReportResponse blockReport(byte[] blockReportRequest) {
+	public BlockReportRequest blockReport(byte[] blockReportRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public HeartBeatResponse heartBeat(byte[] heartBeatRequest) {
+	public HeartBeatRequest heartBeat(byte[] heartBeatRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}

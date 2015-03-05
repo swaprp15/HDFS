@@ -6,10 +6,20 @@ public class Blocks {
 	
 	private Object mutex;
 	
+	public Blocks(String file)
+	{
+		
+	}
+	
 	public void restore()
 	{
 		// read from file to find out the latest free number.
 		// Or shall we move this to constructor.
+	}
+	
+	public void writeBack()
+	{
+		
 	}
 	
 	public int getFreeBlockNumber()
