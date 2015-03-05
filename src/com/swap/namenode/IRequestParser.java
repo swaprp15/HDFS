@@ -1,7 +1,14 @@
 package com.swap.namenode;
 
+enum mode
+{
+	Read,
+	Write
+}
+
 class OpenFileResponse
 {
+	int handle;
 	
 }
 
@@ -37,6 +44,15 @@ class HeartBeatResponse
 	
 }
 
+class ReadBlockRequest
+{
+	
+}
+
+class WriteBockRequest
+{
+	
+}
 
 public interface IRequestParser {
 	
@@ -53,4 +69,8 @@ public interface IRequestParser {
 	public BlockReportResponse blockReport(byte[] blockReportRequest);
 	
 	public HeartBeatResponse heartBeat(byte[] heartBeatRequest);
+	
+	public ReadBlockRequest readBlock(byte[] readBlockRequest);
+	
+	public WriteBockRequest writeBlock(byte[] writeBockRequest);
 }

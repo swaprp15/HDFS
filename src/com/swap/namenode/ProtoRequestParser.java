@@ -3,6 +3,18 @@ package com.swap.namenode;
 public class ProtoRequestParser implements IRequestParser{
 
 	@Override
+	public ReadBlockRequest readBlock(byte[] readBlockRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public WriteBockRequest writeBlock(byte[] writeBockRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public OpenFileResponse openFile(byte[] openFileRequest) {
 		// TODO Auto-generated method stub
 		return null;
