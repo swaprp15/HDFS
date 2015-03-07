@@ -1,17 +1,50 @@
-package com.swap.namenode;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import com.google.protobuf.InvalidProtocolBufferException;
+
 
 public class ProtoRequestParser implements IRequestParser{
 
 	@Override
 	public ReadBlockRequest readBlock(byte[] readBlockRequest) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		ReadBlockRequest currentReadBlockRequest = new ReadBlockRequest();
+		try {
+			
+			InputStream in = new ByteArrayInputStream(readBlockRequest);
+			HDFS.ReadBlockRequest input = HDFS.ReadBlockRequest.parseFrom(in);
+			int temp =0;
+			temp = input.getBlockNumber();
+			currentReadBlockRequest.blockNumber=temp;
+			
+		} catch (InvalidProtocolBufferException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return currentReadBlockRequest;
 	}
 
 	@Override
-	public WriteBockRequest writeBlock(byte[] writeBockRequest) {
+	public WriteBlockRequest writeBlock(byte[] writeBlockRequest) {
 		// TODO Auto-generated method stub
-		return null;
+		WriteBlockRequest currentWriteBlockRequest = new WriteBlockRequest();
+		
+		InputStream in = new ByteArrayInputStream(writeBlockRequest);
+		try {
+			currentWriteBlockRequest.wrBlockRequest = HDFS.WriteBlockRequest.parseFrom(in);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return currentWriteBlockRequest;
 	}
 
 	@Override

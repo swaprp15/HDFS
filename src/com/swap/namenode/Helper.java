@@ -1,4 +1,3 @@
-package com.swap.namenode;
 
 import java.util.List;
 
@@ -52,12 +51,12 @@ class HeartBeatRequest
 
 class ReadBlockRequest
 {
-	
+	int blockNumber;
 }
 
-class WriteBockRequest
+class WriteBlockRequest
 {
-	
+	HDFS.WriteBlockRequest wrBlockRequest;
 }
 
 class OpenFileResponse
@@ -110,9 +109,9 @@ class HeartBeatResponse
 	
 }
 
-class WriteBockResponse
+class WriteBlockResponse
 {
-	
+	HDFS.WriteBlockRequest wrBlockResponce;
 }
 
 class ReadBlockResponse

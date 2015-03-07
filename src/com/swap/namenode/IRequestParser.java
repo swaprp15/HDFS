@@ -1,4 +1,3 @@
-package com.swap.namenode;
 
 public interface IRequestParser {
 	
@@ -18,5 +17,5 @@ public interface IRequestParser {
 	
 	public ReadBlockRequest readBlock(byte[] readBlockRequest);
 	
-	public WriteBockRequest writeBlock(byte[] writeBockRequest);
+	public WriteBlockRequest writeBlock(byte[] writeBockRequest);
 }

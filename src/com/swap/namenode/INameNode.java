@@ -1,4 +1,3 @@
-package com.swap.namenode;
 
 public interface INameNode {
 

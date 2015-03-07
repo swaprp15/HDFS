@@ -1,4 +1,3 @@
-package com.swap.namenode;
 
 public interface IResponseGenerator {
 	
@@ -18,6 +17,6 @@ public interface IResponseGenerator {
 	
 	public byte[] readBlock(ReadBlockResponse readBlockResponse);
 	
-	public byte[] writeBlock(WriteBockResponse writeBockResponse);
+	public byte[] writeBlock(WriteBlockResponse writeBockResponse);
 	
 }

@@ -1,5 +1,3 @@
-package com.swap.namenode;
-
 public class ProtoResponseGenerator implements IResponseGenerator {
 
 	@Override
@@ -52,7 +50,7 @@ public class ProtoResponseGenerator implements IResponseGenerator {
 	}
 
 	@Override
-	public byte[] writeBlock(WriteBockResponse writeBockRequest) {
+	public byte[] writeBlock(WriteBlockResponse writeBockRequest) {
 		// TODO Auto-generated method stub
 		return null;
 	}
