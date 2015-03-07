@@ -24,29 +24,29 @@ class OpenFileRequest
 
 class CloseFileRequest
 {
-	
+	HDFS.CloseFileRequest closeFileRequest;
 }
 
 
 class AssignBlockRequest
 {
-	
+	HDFS.AssignBlockRequest asgnBlockRequest;
 }
 
 
 class ListRequest
 {
-	
+	HDFS.ListFilesRequest listFilesRequest;
 }
 
 class BlockReportRequest
 {
-	
+	HDFS.BlockReportRequest blockReportRequest;
 }
 
 class HeartBeatRequest
 {
-	
+	HDFS.HeartBeatRequest hrtBeatRequest;
 }
 
 class ReadBlockRequest
@@ -90,23 +90,23 @@ class BlockLocationResponse
 
 class AssignBlockResponse
 {
-	
+	HDFS.AssignBlockRequest asgnBlockRequest;
 }
 
 
 class ListResponse
 {
-	
+	HDFS.ListFilesResponse listFilesResponse;
 }
 
 class BlockReportResponse
 {
-	
+	HDFS.BlockReportResponse blockReportResponse;
 }
 
 class HeartBeatResponse
 {
-	
+	HDFS.HeartBeatResponse hrtBeatResponse;
 }
 
 class WriteBlockResponse
@@ -116,5 +116,5 @@ class WriteBlockResponse
 
 class ReadBlockResponse
 {
-	
+	HDFS.ReadBlockResponse rdBlockResponse;
 }
