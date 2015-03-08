@@ -90,7 +90,7 @@ class BlockLocationResponse
 
 class AssignBlockResponse
 {
-	HDFS.AssignBlockRequest asgnBlockRequest;
+	HDFS.AssignBlockResponse asgnBlockRequest;
 }
 
 
@@ -111,7 +111,7 @@ class HeartBeatResponse
 
 class WriteBlockResponse
 {
-	HDFS.WriteBlockRequest wrBlockResponce;
+	HDFS.WriteBlockResponse wrBlockResponce;
 }
 
 class ReadBlockResponse

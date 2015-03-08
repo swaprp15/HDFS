@@ -1,6 +1,4 @@
 
-import com.swap.namenode.Helper.*;
-
 public interface IResponseGenerator {
 	
 	public byte[] openFile(OpenFileResponse openFileResponse);
