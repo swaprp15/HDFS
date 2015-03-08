@@ -1,5 +1,3 @@
-package com.swap.namenode;
-
 public class Blocks {
 	
 	private int currentFreeBlockNumber;
@@ -7,6 +5,10 @@ public class Blocks {
 	private Object mutex;
 	
 	public Blocks(String file)
+	{
+		
+	}
+	public Blocks()
 	{
 		
 	}

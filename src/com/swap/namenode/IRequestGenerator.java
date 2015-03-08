@@ -1,12 +1,10 @@
-package com.swap.namenode;
-
 public interface IRequestGenerator {
 	
 	public byte[] openFile(OpenFileRequest openFileRequest);
 	
 	public byte[] closeFile(CloseFileRequest closeFileRequest);
 	
-	public byte[] getBlockLocations(BlockLocationRequest getBlockLOcationsRequest);
+	public byte[] getBlockLocations(BlockLocationRequest getBlockLocationsRequest);
 
 	public byte[] assignBlock(AssignBlockRequest assignBlockRequest);
 	
@@ -18,5 +16,5 @@ public interface IRequestGenerator {
 	
 	public byte[] readBlock(ReadBlockRequest readBlockRequest);
 	
-	public byte[] writeBlock(WriteBockRequest writeBockRequest);
+	public byte[] writeBlock(WriteBlockRequest writeBockRequest);
 }

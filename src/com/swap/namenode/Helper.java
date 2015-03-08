@@ -1,4 +1,3 @@
-package com.swap.namenode;
 
 import java.util.List;
 
@@ -25,39 +24,39 @@ class OpenFileRequest
 
 class CloseFileRequest
 {
-	
+	HDFS.CloseFileRequest closeFileRequest;
 }
 
 
 class AssignBlockRequest
 {
-	
+	HDFS.AssignBlockRequest asgnBlockRequest;
 }
 
 
 class ListRequest
 {
-	
+	HDFS.ListFilesRequest listFilesRequest;
 }
 
 class BlockReportRequest
 {
-	
+	HDFS.BlockReportRequest blockReportRequest;
 }
 
 class HeartBeatRequest
 {
-	
+	HDFS.HeartBeatRequest hrtBeatRequest;
 }
 
 class ReadBlockRequest
 {
-	
+	int blockNumber;
 }
 
-class WriteBockRequest
+class WriteBlockRequest
 {
-	
+	HDFS.WriteBlockRequest wrBlockRequest;
 }
 
 class OpenFileResponse
@@ -91,31 +90,31 @@ class BlockLocationResponse
 
 class AssignBlockResponse
 {
-	
+	HDFS.AssignBlockResponse asgnBlockRequest;
 }
 
 
 class ListResponse
 {
-	
+	HDFS.ListFilesResponse listFilesResponse;
 }
 
 class BlockReportResponse
 {
-	
+	HDFS.BlockReportResponse blockReportResponse;
 }
 
 class HeartBeatResponse
 {
-	
+	HDFS.HeartBeatResponse hrtBeatResponse;
 }
 
-class WriteBockResponse
+class WriteBlockResponse
 {
-	
+	HDFS.WriteBlockResponse wrBlockResponce;
 }
 
 class ReadBlockResponse
 {
-	
+	HDFS.ReadBlockResponse rdBlockResponse;
 }

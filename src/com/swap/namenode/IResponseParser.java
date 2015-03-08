@@ -1,5 +1,3 @@
-package com.swap.namenode;
-
 public interface IResponseParser {
 	
 	public OpenFileResponse openFile(byte[] openFileResponse);
@@ -18,6 +16,6 @@ public interface IResponseParser {
 	
 	public ReadBlockResponse readBlock(byte[] readBlockResponse);
 	
-	public WriteBockResponse writeBlock(byte[] writeBockResponse);
+	public WriteBlockResponse writeBlock(byte[] writeBlockResponse);
 	
 }
