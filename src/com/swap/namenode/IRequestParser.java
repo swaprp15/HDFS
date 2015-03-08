@@ -1,4 +1,6 @@
 
+import com.swap.namenode.Helper.*;
+
 public interface IRequestParser {
 	
 	public OpenFileRequest openFile(byte[] openFileRequest);
